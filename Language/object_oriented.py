@@ -6,50 +6,70 @@ class Student(object):
         self.age = age
         super().__init__()
     # 在类中定义的方法，第一个参数只能是self
+
     def printInfo(self):
         print(self.name, self.age)
     pass
-#根据类名创造实例
+
+
+# 根据类名创造实例
 milo = Student('milo', 22)
 # 可以自由地给实例绑定属性，即使是类中没有的属性
 milo.num = 1
 print(milo.num, milo.name, milo.age)
-milo.printInfo()# 调用时不用手动传入self参数内容
+milo.printInfo()  # 调用时不用手动传入self参数内容
 
 # 访问限制
+
+
 class Student_1():
     def __init__(self, name, age):
         # 通过在成员变量名字之前加两个下划线，将变量设置为private。
         self.__name = name
         self.__age = age
         super().__init__()
+
     def get_name(self):
         return self.__name
+
     def get_age(self):
         return self.__age
+
     def set_age(self, age):
         self.__age = age
+
+
 july = Student_1('July', 18)
 # print(july.__name)外部方法不能访问内部私有变量
 july.set_age(16)
-print(july.get_name(), july.get_age())#只能通过类内部方法访问成员变量
-print(july._Student_1__name)#解释器将__name改为了_Student_1__name，但是不要这么做
+print(july.get_name(), july.get_age())  # 只能通过类内部方法访问成员变量
+print(july._Student_1__name)  # 解释器将__name改为了_Student_1__name，但是不要这么做
 
 # 继承和多态
+
+
 class Animal():
     def __init__(self):
         super().__init__()
+
     def run(self):
         print('running')
 # Dog类继承了Animal类，即使什么都没做，仍可以使用Animal的run方法
+
+
 class Dog(Animal):
     pass
 # Cat类继承了Animal类，但是重写了run方法，还新增了Cat独有的内容eat方法
+
+
 class Cat(Animal):
     def run(self):
         print('cat is running')
+
     def eat(self):
         print('cat is eating')
+
+
 dog = Dog()
 dog.run()
 cat = Cat()

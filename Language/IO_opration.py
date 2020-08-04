@@ -1,4 +1,5 @@
 # 当前工作目录在Python文件夹
+import os
 f = open('./Language/test_IO.txt', 'r')
 str = f.read()
 print(str)
@@ -16,14 +17,13 @@ with open('./Language/test_IO.txt', 'r') as f:
 # f = open('/Users/michael/gbk.txt', 'r', encoding='gbk', errors='ignore')
 
 # 写文件，文件不存在时自动创建文件
-with open('./Language/test_IO.txt', 'w') as f:# 覆盖模式
+with open('./Language/test_IO.txt', 'w') as f:  # 覆盖模式
     f.write("yes!")
-with open('./Language/test_IO.txt', 'a') as f:# 追加模式
+with open('./Language/test_IO.txt', 'a') as f:  # 追加模式
     f.write('\nappend mode')
 
 # 操作文件和目录
-import os
-print(os.name)# 查看操作系统类型
-print(os.path.abspath('.'))# 返回当前所在工作目录路径
-os.mkdir('./Language/testdir')# 创建文件夹
-os.rmdir('./Language/testdir')# 删除文件夹
+print(os.name)  # 查看操作系统类型
+print(os.path.abspath('.'))  # 返回当前所在工作目录路径
+os.mkdir('./Language/testdir')  # 创建文件夹
+os.rmdir('./Language/testdir')  # 删除文件夹
