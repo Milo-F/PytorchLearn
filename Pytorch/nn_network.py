@@ -28,8 +28,8 @@ for t in range(500):
     # 计算损失，使用minSqrtLoss
     loss = loss_fn(y_pred, y)
     print(t, loss.item())
-    optimizer.zero_grad()
     # 反向传播，计算gradient
     loss.backward()
     # 更新参数
     optimizer.step()
+    optimizer.zero_grad()
