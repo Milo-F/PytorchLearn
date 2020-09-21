@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 
 print(torch.cuda.is_available())
-# N为多少训练数据；D_in输入数据的维度；H是中间神经元个数；D_out输出数据的维度。
+# N为多少训练数据；D_in输入数据的维度；H是中间层神经元个数；D_out输出数据的维度。
 N, D_in, H, D_out = 64, 1000, 100, 10
 # 随机创建训练数据
 x = torch.randn(N, D_in)
