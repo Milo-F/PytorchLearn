@@ -16,7 +16,8 @@ class ANNModel(nn.Module):
         self.l5 = nn.Linear(hidden_dim, hidden_dim, bias=True)
         self.f5 = nn.ReLU()
         self.l6 = nn.Linear(hidden_dim, output_dim, bias=True)
-        self.f6 = nn.ReLU()
+        # self.f6 = nn.ReLU()
+
 
     def forward(self, inputs):
         outputs = self.l1(inputs)
@@ -30,5 +31,5 @@ class ANNModel(nn.Module):
         outputs = self.l5(outputs)
         outputs = self.f5(outputs)
         outputs = self.l6(outputs)
-        outputs = self.f6(outputs)
+        # outputs = self.f6(outputs)
         return outputs
